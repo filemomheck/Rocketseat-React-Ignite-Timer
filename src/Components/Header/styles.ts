@@ -22,6 +22,7 @@ export const HeaderContainer = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: none;
 
       &:hover {
         border-bottom: 3px solid ${(props) => props.theme["green-500"]};
