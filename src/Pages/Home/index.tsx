@@ -12,7 +12,13 @@ import {
 
 export function Home() {
   // React Hook Form:
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch } = useForm<newCycleFormDate>({
+    // Valores por padrão:
+    defaultValues: {
+      task: "",
+      minutesAmount: 0,
+    },
+  });
 
   // Retorna os dados do formulário:
   function handleCreateNewCycle(date: object) {
@@ -22,6 +28,11 @@ export function Home() {
   //Estado do botão submit:
   const task = watch("task");
   const isDisable = !task;
+
+  interface newCycleFormDate {
+    task: string;
+    minutesAmount: number;
+  }
 
   return (
     <HomeContainer>
